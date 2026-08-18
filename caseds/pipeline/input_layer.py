@@ -7,11 +7,11 @@ from urllib.parse import urlparse
 from caseds.models.schemas import RawInput, NormalizedInput
 
 URL_PATTERN = re.compile(
-    r"(https?:\/\/[^\0-\u0020.,;:')\]]+|ftp:\/\/[^\0-\u0020.,;:')\]]+|www\.[^\0-\u0020.,;:')\]]+)",
+    r"(https?:\/\/[^\s'\"<>)\]]+|ftp:\/\/[^\s'\"<>)\]]+|www\.[^\s'\"<>)\]]+)",
     re.IGNORECASE,
 )
 
-TRAILING_PUNCTUATION = '.,;:\"')\]]'
+TRAILING_PUNCTUATION = ".,;:'\")}]"
 
 
 class InputNormalizer:
